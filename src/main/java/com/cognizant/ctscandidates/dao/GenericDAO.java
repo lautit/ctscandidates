@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface GenericDAO<E, K extends Serializable> {
 
-	public K guardar(E elemento);
-	public void actualizar(E elemento);
-	public void borrar(K id);
-	public E buscarPorId(K id);
-	public List<E> recuperarTodos();
-	public List<E> recuperarTodos(int pagina, int rows);
-	public Long contar();
+	public K save(E element);
+	public void update(E element);
+	public void delete(K id);
+	public E searchById(K id);
+	public List<E> getAll();
+	public List<E> getAll(int page, int rows);
+	public Long count();
 }

@@ -11,15 +11,16 @@ import javax.persistence.OneToMany;
 public class ServiceOrder {
 	@Id
 	@GeneratedValue
-	private Integer serviceOrderId;
+	private Long serviceOrderId;
 	@OneToMany
 	private List<Quota> quotaList;
 	
 	
-	public Integer getServiceOrderId() {
+
+	public Long getServiceOrderId() {
 		return serviceOrderId;
 	}
-	public void setServiceOrderId(Integer serviceOrderId) {
+	public void setServiceOrderId(Long serviceOrderId) {
 		this.serviceOrderId = serviceOrderId;
 	}
 	public List<Quota> getQuotaList() {

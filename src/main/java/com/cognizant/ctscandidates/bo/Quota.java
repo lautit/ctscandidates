@@ -11,17 +11,19 @@ import javax.persistence.OneToMany;
 public class Quota {
 	@Id
 	@GeneratedValue
-	private Integer quotaId;
+	private Long quotaId;
 	private Integer jobCode;
 	private String jobTitle;
 	private String jobGradle;
 	@OneToMany
 	private List<Timeline> timelineList;
 	
-	public Integer getQuotaId() {
+
+	
+	public Long getQuotaId() {
 		return quotaId;
 	}
-	public void setQuotaId(Integer quotaId) {
+	public void setQuotaId(Long quotaId) {
 		this.quotaId = quotaId;
 	}
 	public Integer getJobCode() {

@@ -31,43 +31,43 @@ public class GenericDAOImp<E, K extends Serializable> implements GenericDAO<E, K
 	}
 
 	@Override
-	public K guardar(E elemento) {
-		return (K) sessionFactory.getCurrentSession().save(elemento);
+	public K save(E element) {
+		return (K) sessionFactory.getCurrentSession().save(element);
 	}
 
 	@Override
-	public void actualizar(E elemento) {
-		sessionFactory.getCurrentSession().update(elemento);		
+	public void update(E element) {
+		sessionFactory.getCurrentSession().update(element);		
 	}
 
 	@Override
-	public void borrar(K id) {
+	public void delete(K id) {
 		
 		
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public E buscarPorId(K id) {
+	public E searchById(K id) {
 		return (E) sessionFactory.getCurrentSession().get(entityClass, id);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<E> recuperarTodos() {
+	public List<E> getAll() {
 		return sessionFactory.getCurrentSession().createQuery("from " + entityClass.getName() + " obj").list();
 	}
 
 	@Override
-	public List<E> recuperarTodos(int pagina, int rows) {
+	public List<E> getAll(int page, int rows) {
 		Query query = sessionFactory.getCurrentSession().createQuery("from " + entityClass.getName() + " obj");
-		query.setFirstResult(rows * (pagina - 1));
+		query.setFirstResult(rows * (page - 1));
 		query.setMaxResults(rows);
 		return query.list();
 	}
 
 	@Override
-	public Long contar() {
+	public Long count() {
 		// TODO Auto-generated method stub
 		return (Long) sessionFactory.getCurrentSession().createQuery("select count(*) from " + entityClass.getName() + " obj").uniqueResult();
 	}

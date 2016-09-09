@@ -45,7 +45,6 @@ public class EventServiceImp implements EventService{
 
 	@Override
 	public Long count() {
-		// TODO Auto-generated method stub
 		return eventDAO.count();
 	}
 	

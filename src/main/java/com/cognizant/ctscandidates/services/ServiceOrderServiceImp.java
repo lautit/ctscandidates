@@ -15,6 +15,7 @@ import com.cognizant.ctscandidates.dao.ServiceOrderDAO;
 @Transactional
 public class ServiceOrderServiceImp implements ServiceOrderService {
 
+	@SuppressWarnings("unused")
 	private static final Logger log = Logger.
 			getLogger(ServiceOrderServiceImp.class);
 	

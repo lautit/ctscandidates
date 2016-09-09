@@ -46,7 +46,6 @@ public class TimelineServiceImp implements TimelineService{
 
 	@Override
 	public Long count() {
-		// TODO Auto-generated method stub
 		return timelineDAO.count();
 	}
 	

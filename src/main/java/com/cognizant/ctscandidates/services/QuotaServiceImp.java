@@ -14,6 +14,7 @@ import com.cognizant.ctscandidates.dao.QuotaDAO;
 @Transactional
 public class QuotaServiceImp implements QuotaService {
 
+	@SuppressWarnings("unused")
 	private static final Logger log = Logger.
 			getLogger(QuotaServiceImp.class);
 	

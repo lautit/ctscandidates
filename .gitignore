@@ -78,3 +78,8 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+#############################
+# PARA NO PISAR NUESTRAS DB #
+application.properties
+applicationContext.xml

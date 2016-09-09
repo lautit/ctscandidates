@@ -1,22 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CTS Candidates</title>
+	
 	<!-- CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/jquery-ui.css" rel="stylesheet">
+	<link href="css/jquery-ui.structure.css" rel="stylesheet">
+	<link href="css/jquery-ui.theme.css" rel="stylesheet">
 	<link href="css/ctscandidates.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	
+	<!-- Scripts -->
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.js"></script>
+	<!-- jQuery UI -->
+	<script src="js/jquery-ui.js"></script>
+	<!-- Our Scripts -->
+	<script src="js/ctscandidate.js"></script>
+	
 </head>
+
 <body id="page-top" class="index">
+
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
 	<div class="container">
@@ -48,6 +69,7 @@
 	</div>
 	<!-- /.container-fluid -->
 </nav>
+
 <!-- Header -->
 <header>
 	<div class="container">

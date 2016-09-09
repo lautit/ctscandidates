@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:import url="/templates/top.jsp" />
+
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
 	<div class="container">
@@ -55,4 +56,5 @@
 		</div>
 	</div>
 </section>
+
 <c:import url="/templates/bot.jsp" />

@@ -19,12 +19,7 @@
 			<servlet-name>dispatcher</servlet-name>
 			<url-pattern>*.html</url-pattern>
 		</servlet-mapping>
-<!-- 
-		<context-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:resources/applicationContext.xml</param-value>
-		</context-param>
- -->
+		
 		<filter>
 			<filter-name>openSessionInViewFilter</filter-name>
 			<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>

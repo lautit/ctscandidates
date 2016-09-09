@@ -11,6 +11,7 @@
 			<!-- CSS -->
 			<link href="css/bootstrap.min.css" rel="stylesheet">
 			<link href="css/ctscandidates.css" rel="stylesheet">
+			<link href="css/styles.css" rel="stylesheet">
 			<!-- Fonts -->
 			<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 			<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">

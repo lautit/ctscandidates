@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cognizant.ctscandidates.bo.Timeline;
-import com.cognizant.ctscandidates.dao.EventDAO;
 import com.cognizant.ctscandidates.dao.TimelineDAO;
 
 @Service

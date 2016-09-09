@@ -42,7 +42,8 @@ public class GenericDAOImp<E, K extends Serializable> implements GenericDAO<E, K
 
 	@Override
 	public void delete(K id) {
-		
+		E element = searchById(id);
+		sessionFactory.getCurrentSession().delete(element);
 		
 	}
 

@@ -133,7 +133,7 @@
 	            </div>
 	        </div>
 	    </div>
-	    <c:import url="/templates/timeLine.jsp" />
+	    <c:import url="/timeline/timeLine.jsp" />
 	    <!-- javascript -->
 	    <script src="js/jquery.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>

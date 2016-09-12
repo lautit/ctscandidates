@@ -46,13 +46,14 @@
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
 			</button>
-			<a class="navbar-brand" href="#page-top">CTS Candidates</a>
+			<c:url value="/home/index.html" var="myURL"></c:url>
+			<a class="navbar-brand" href="${myURL}">CTS Candidates</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li class="hidden">
-					<a href="#page-top"></a>
+					<a href="${myURL}"></a>
 				</li>
 				<li class="page-scroll">
 					<a href="#formServiceOrder">New Service Order</a>
@@ -69,18 +70,3 @@
 	</div>
 	<!-- /.container-fluid -->
 </nav>
-
-<!-- Header -->
-<header>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<img class="img-responsive" src="<c:url value="/img/profile.png"/>" alt="">
-				<div class="intro-text">
-					<span class="name">CTS Candidate</span>
-					<span class="skills">records and tracks the outcome of your job search results</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>

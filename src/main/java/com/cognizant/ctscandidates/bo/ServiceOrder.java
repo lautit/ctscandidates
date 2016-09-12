@@ -13,10 +13,29 @@ public class ServiceOrder {
 	@Id
 	@GeneratedValue
 	private Long serviceOrderId;
-	
+	private String proyectManager;
+	private String recruiter;
 	@OneToMany
 	private List<Quota> quotaList;
 	
+	
+	
+	public String getProyectManager() {
+		return proyectManager;
+	}
+
+	public void setProyectManager(String proyectManager) {
+		this.proyectManager = proyectManager;
+	}
+
+	public String getRecruiter() {
+		return recruiter;
+	}
+
+	public void setRecruiter(String recruiter) {
+		this.recruiter = recruiter;
+	}
+
 	public Long getServiceOrderId() {
 		return serviceOrderId;
 	}

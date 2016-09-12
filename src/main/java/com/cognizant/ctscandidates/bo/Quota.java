@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Quota {
@@ -17,7 +17,7 @@ public class Quota {
 	private String jobTitle;
 	private String jobGradle;
 	
-	@OneToMany
+	@ManyToMany
 	private List<Timeline> timelineList;
 	
 	public Long getQuotaId() {

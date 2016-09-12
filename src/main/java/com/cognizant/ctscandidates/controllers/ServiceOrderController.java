@@ -23,6 +23,13 @@ public class ServiceOrderController {
 	@Autowired
 	QuotaService quotaService;
 	
+	@RequestMapping(value = "/list")
+	public String list(Model model){
+			List<ServiceOrder> serviceOrders= serviceOrderService.getAll();
+			model.addAttribute("serviceOrders", serviceOrders);
+		return null;
+	}
+	
 	
 	@RequestMapping(value = "/details")
 	public String details(@RequestParam Long id, Model model){

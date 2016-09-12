@@ -18,8 +18,6 @@ public class ServiceOrder {
 	@OneToMany
 	private List<Quota> quotaList;
 	
-	
-	
 	public String getProyectManager() {
 		return proyectManager;
 	}

@@ -8,7 +8,7 @@
 
 <div class="panel panel-default col-md-6 col-md-offset-3">
   <div class="panel-heading">
-    <h3 class="panel-title">SO: 134563</h3>
+    <h3 class="panel-title">ServiceOrder N°: ${serviceOrder.serviceOrderId}</h3>
   </div>
   <div class="panel-body">
  
@@ -24,7 +24,7 @@
 			<td>${q.jobTitle}</td>
 			<td>${q.jobCode}</td>
 			<td>
-				<a href="viewTimeline.html?id=${q.quotaId}" class="btn btn-default">View</a>
+				<a href="quota/details.html?id=${q.quotaId}" class="btn btn-default">View</a>
 			</td>
 		</tr>
 	</c:forEach>

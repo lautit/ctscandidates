@@ -15,7 +15,7 @@ public class Quota {
 	private Long quotaId;
 	private Integer jobCode;
 	private String jobTitle;
-	private String jobGradle;
+	private String jobGrade;
 	
 	@OneToMany
 	private List<Timeline> timelineList;
@@ -44,12 +44,12 @@ public class Quota {
 		this.jobTitle = jobTitle;
 	}
 	
-	public String getJobGradle() {
-		return jobGradle;
+	public String getJobGrade() {
+		return jobGrade;
 	}
 	
-	public void setJobGradle(String jobGradle) {
-		this.jobGradle = jobGradle;
+	public void setJobGrade(String jobGrade) {
+		this.jobGrade = jobGrade;
 	}
 	
 	public List<Timeline> getTimelineList() {

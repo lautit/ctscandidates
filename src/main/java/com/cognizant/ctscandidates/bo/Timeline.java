@@ -15,7 +15,7 @@ public class Timeline {
 	private Date initDate;
 	private Date cancelDate;
 	
-	@ManyToMany
+	@OneToMany
 	private List<Event> events = new ArrayList<Event>();
 
 	public Long getTimelineId() {

@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cognizant.ctscandidates.services.ServiceOrderService;
 
-@Controller
 @RequestMapping("/serviceorder")
+@Controller
 public class ServiceOrderController {
 
 	@Autowired
 	ServiceOrderService serviceOrderService;
+	
+
 
 }

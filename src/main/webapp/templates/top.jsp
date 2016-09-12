@@ -12,13 +12,13 @@
 	<title>CTS Candidates</title>
 	
 	<!-- CSS -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.css" rel="stylesheet">
-	<link href="css/jquery-ui.css" rel="stylesheet">
-	<link href="css/jquery-ui.structure.css" rel="stylesheet">
-	<link href="css/jquery-ui.theme.css" rel="stylesheet">
-	<link href="css/ctscandidates.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
+	<link href="<c:url value="/css/bootstrap.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/bootstrap-theme.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/jquery-ui.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/jquery-ui.structure.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/jquery-ui.theme.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/ctscandidates.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/styles.css"/>" rel="stylesheet">
 	
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -26,13 +26,13 @@
 	
 	<!-- Scripts -->
 	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+	<script src="<c:url value="/js/jquery.js"/>"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.js"></script>
+	<script src="<c:url value="/js/bootstrap.js"/>"></script>
 	<!-- jQuery UI -->
-	<script src="js/jquery-ui.js"></script>
+	<script src="<c:url value="/js/jquery-ui.js"/>"></script>
 	<!-- Our Scripts -->
-	<script src="js/ctscandidate.js"></script>
+	<script src="<c:url value="/js/ctscandidate.js"/>"></script>
 	
 </head>
 
@@ -75,7 +75,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<img class="img-responsive" src="img/profile.png" alt="">
+				<img class="img-responsive" src="<c:url value="/img/profile.png"/>" alt="">
 				<div class="intro-text">
 					<span class="name">CTS Candidate</span>
 					<span class="skills">records and tracks the outcome of your job search results</span>

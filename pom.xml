@@ -10,6 +10,7 @@
 		<springframework.version>4.3.1.RELEASE</springframework.version>
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<mysql.connector.version>5.1.31</mysql.connector.version>
+		<postgresql.connector.version>9.1-901-1.jdbc4</postgresql.connector.version>
 		<joda-time.version>2.3</joda-time.version>
 		<hibernate.validator.version>5.1.2.Final</hibernate.validator.version>
 		<javax.validation.version>1.1.0.Final</javax.validation.version>
@@ -97,7 +98,14 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.connector.version}</version>
 		</dependency>
-
+		
+		<!-- PostgreSQL -->
+		<dependency>
+		    <groupId>postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>${postgresql.connector.version}</version>
+		</dependency>
+		
 		<!-- Log4j -->
 		<dependency>
 			<groupId>log4j</groupId>

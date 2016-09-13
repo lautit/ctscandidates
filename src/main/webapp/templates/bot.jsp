@@ -22,7 +22,7 @@
 	</a>
 </div>
 
-<c:import url="/templates/modals.jsp" />
+<!-- <c:import url="/templates/modals.jsp" /> -->
 
 </body>
 

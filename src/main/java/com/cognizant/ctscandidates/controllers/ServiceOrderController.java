@@ -42,31 +42,31 @@ public class ServiceOrderController {
 		model.addAttribute("quotas", quotas);
 		return null;
 	}
-
-	@RequestMapping(value = "/form", method = RequestMethod.GET)
-	public String nuevoProyecto(Model model) {
-		model.addAttribute("serviceOrderForm", new ServiceOrderForm());
-		return null;
-	}
-
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("serviceOrderForm") ServiceOrderForm serviceOrderForm, Model model) {
-		ServiceOrder serviceOrder = new ServiceOrder();
-		List<Quota> quotas = new ArrayList<Quota>();
-		//me traigo el json y lo meto como objetos Quota en quotas
-		serviceOrder.setServiceOrderId(serviceOrderForm.getServiceOrderId());
-		serviceOrder.setProyectManager(serviceOrderForm.getProyectManager());
-		serviceOrder.setRecruiter(serviceOrderForm.getRecruiter());
-		serviceOrder.setQuotaList(quotas);
-//		for (Quota quota : quotas) {
-//			serviceOrder.getQuotaList().add(quota);
-//		}
-		
-		
-		Long idActual = serviceOrderService.save(serviceOrder);
-		
-
-		return "details.html?id=" + idActual;
-	}
+//	Estoy trabajando en esto y le hice un commit sin querer (nico)
+//	@RequestMapping(value = "/form", method = RequestMethod.GET)
+//	public String nuevoProyecto(Model model) {
+//		model.addAttribute("serviceOrderForm", new ServiceOrderForm());
+//		return null;
+//	}
+//
+//	@RequestMapping(value = "/save", method = RequestMethod.POST)
+//	public String save(@ModelAttribute("serviceOrderForm") ServiceOrderForm serviceOrderForm, Model model) {
+//		ServiceOrder serviceOrder = new ServiceOrder();
+//		List<Quota> quotas = new ArrayList<Quota>();
+//		//me traigo el json y lo meto como objetos Quota en quotas
+//		serviceOrder.setServiceOrderId(serviceOrderForm.getServiceOrderId());
+//		serviceOrder.setProyectManager(serviceOrderForm.getProyectManager());
+//		serviceOrder.setRecruiter(serviceOrderForm.getRecruiter());
+//		serviceOrder.setQuotaList(quotas);
+////		for (Quota quota : quotas) {
+////			serviceOrder.getQuotaList().add(quota);
+////		}
+//		
+//		
+//		Long idActual = serviceOrderService.save(serviceOrder);
+//		
+//
+//		return "details.html?id=" + idActual;
+//	}
 
 }

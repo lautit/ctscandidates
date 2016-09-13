@@ -4,7 +4,8 @@
 
 <c:import url="/templates/top.jsp" />
 
-<div class="panel panel-default col-sm-8 col-md-8 col-md-offset-2">
+<div style="padding-top:20px">
+<div class="panel panel-default col-sm-8 col-md-8 col-md-offset-2 " >
 	<div class="panel-heading">
 		<h3 class="panel-title">Service Orders</h3>
 	</div>
@@ -28,6 +29,9 @@
 		</table>
 	</div>
 </div>
+</div>
+
+
 
 
 <c:import url="/templates/bot.jsp" />

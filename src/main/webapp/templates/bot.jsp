@@ -22,8 +22,6 @@
 	</a>
 </div>
 
-<!-- <c:import url="/templates/modals.jsp" /> -->
-
 </body>
 
 </html>

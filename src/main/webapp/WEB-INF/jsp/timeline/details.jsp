@@ -4,34 +4,75 @@
 
 <c:import url="/templates/top.jsp" />
 
-<section id="timeline">
-	<div class="container">
-		<div class="row">
-			<h2>Timeline</h2>
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<div id="timeLineData">
-							<table class="table-bordered table-striped">
-								<tr>
-									<th>Timeline Id</th>
-									<th>Job title</th>
-									<th>Grade</th>
-									<th>Start Date</th>
-									<th>Description Form ID</th>
-								</tr>
-								<tr>
-									<td>1234</td>
-									<td>Java Programmer</td>
-									<td>Project Manager</td>
-									<td>12/12/12</td>
-									<td>10230123</td>
-								</tr>
-							</table>
+<section class="container" id="timeline">
+	<div class="row main-row">
+		<h2>Timeline</h2>
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1" id="timeLineData">
+					<div class="row">
+						<div class="col-md-3 col-md-offset-1">
+							<p>Timeline ID: </p>
+							<span>1234</span>
 						</div>
-						<div class="progress">
-							<div class="progress-bar" id="statusBarr" role="progressbar"
-								style="width: 0%"></div>
+						<div class="col-md-3 col-md-offset-1">
+							<p>Project Manager: </p>
+							<span>John Doe</span>
+						</div>
+						<div class="col-md-3 col-md-offset-1">
+							<p>Start Date: </p>
+							<span>12/12/12</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3 col-md-offset-1">
+							<p>Job Title: </p>
+							<span>Java Programmer</span>
+						</div>
+						<div class="col-md-3 col-md-offset-1">
+							<p>Grade: </p>
+							<span>SA</span>
+						</div>
+						<div class="col-md-3 col-md-offset-1">
+							<p>Description Form ID: </p>
+							<span>10230123</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="progress" id="progressBar">
+						<div class="progress-bar" id="statusBar" role="progressbar" style="width: 0%"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="checkboxes col-md-12" id="timelineCheckboxes">
+					<div class="row">
+						<div class="col-md-2">
+							<input type="checkbox" class="progressCheckbox" disabled id="newCandidate">
+							<label>New Candidate</label>
+						</div>
+						<div class="col-md-2">
+							<input type="checkbox" class="progressCheckbox" disabled id="firstCall">
+							<label>First Call</label>
+						</div>
+						<div class="col-md-2">
+							<input type="checkbox" class="progressCheckbox" disabled id="firstInterview">
+							<label>First Interview</label>
+						</div>
+						<div class="col-md-2">
+							<input type="checkbox" class="progressCheckbox" disabled id="techInterview">
+							<label>Technical Interview</label>
+						</div>
+						<div class="col-md-2">
+							<input type="checkbox" class="progressCheckbox" disabled id="healthTests">
+							<label>Health Tests</label>
+						</div>
+						<div class="col-md-2">
+							<input type="checkbox" class="progressCheckbox" disabled id="hired">
+							<label>Hired</label>
 						</div>
 					</div>
 				</div>

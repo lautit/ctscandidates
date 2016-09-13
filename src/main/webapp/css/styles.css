@@ -1,19 +1,35 @@
-#timeLineData{
-	margin: 0 auto;
+body {
+	padding-top: 2em;
 }
-.timeLineItem{
-	float: left;
-	padding: .3em;
+
+section {
+	padding-left: 2em;
+	padding-right: 2em;
 }
-#close-TL{
-	margin-top: 1em;
+
+#timelineCheckboxes {
+	display: block;
+	width: 100%;
 }
-.test{
-	background-color: red;
+
+#timeline p {
+	font-size: 16px !important;
+	font-weight: bold;
 }
-body{
-	padding-top:100px;
-	background-color: #18bc9c;
+
+#timeline .row {
+	padding: .5em;
+}
+
+.main-row {
+	-webkit-box-shadow: 5px 5px 2px 0px rgba(180,180,180,1);
+	-moz-box-shadow: 5px 5px 2px 0px rgba(180,180,180,1);
+	box-shadow: 5px 5px 2px 0px rgba(180,180,180,1);
+	
+	border-color: rgba(180,180,180,1);
+	border-width: 1px;
+	border-style: solid;
+	background-color: #EEEEEE;
 }
 
 .footer-below {

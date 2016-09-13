@@ -11,6 +11,7 @@ public class Event {
 	@GeneratedValue
 	private Long eventId;
 	private Date date;
+	private String name;
 	private String description;
 	
 	public Long getEventId() {
@@ -35,5 +36,13 @@ public class Event {
 	
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}	
 }

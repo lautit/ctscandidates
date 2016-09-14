@@ -62,18 +62,22 @@ public class EventServiceImp implements EventService {
 		Double progress = null;
 
 		switch (eventName) {
-		case "cv received":
+		case "new candidate":
 			progress = 20.0;
 			break;
 		case "first call":
 			progress = 40.0;
 			break;
-		case "first intterview":
+		case "first interview":
 			progress = 60.0;
 			break;
 		case "technical interview":
 			progress = 80.0;
 			break;
+		case "health tests":
+			progress = 100.0;
+			break;
+		
 		case "hired":
 			progress = 100.0;
 			break;

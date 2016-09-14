@@ -62,7 +62,11 @@ public class QuotaController {
 			Event lastEvent = new Event();
 
 			// we get the last event in the timeline
-			lastEvent = timeline.getEvents().get(timeline.getEvents().size() - 1);
+			if((timeline.getEvents().size() < 0)){
+			lastEvent = timeline.getEvents().get(timeline.getEvents().size());
+			}else{
+				lastEvent = timeline.getEvents().get(timeline.getEvents().size() - 1);
+			}
 			// we add the last event to an event list
 			actualEvents.add(lastEvent);
 			// then change the event name to percentage and add it to a list

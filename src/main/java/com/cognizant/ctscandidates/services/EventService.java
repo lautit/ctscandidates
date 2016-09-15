@@ -19,9 +19,9 @@ public interface EventService {
 	List<Event> getAll();
 
 	List<Event> getAll(int page, int rows);
-	
+
 	Double convertNameToDouble(String eventName);
 
-	//add service methods
-	
+	// add service methods
+
 }

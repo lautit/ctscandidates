@@ -12,27 +12,31 @@ import com.cognizant.ctscandidates.dao.TimelineDAO;
 
 @Service
 @Transactional
-public class TimelineServiceImp implements TimelineService{
+public class TimelineServiceImp implements TimelineService {
 
 	@Autowired
 	private TimelineDAO timelineDAO;
-	
+
 	@Override
-	public Long save(Timeline timeline){
+	public Long save(Timeline timeline) {
 		return timelineDAO.save(timeline);
 	}
+
 	@Override
-	public void update(Timeline timeline){
+	public void update(Timeline timeline) {
 		timelineDAO.update(timeline);
 	}
+
 	@Override
 	public void delete(Long id) {
 		timelineDAO.delete(id);
 	}
+
 	@Override
 	public Timeline searchById(Long id) {
 		return timelineDAO.searchById(id);
 	}
+
 	@Override
 	public List<Timeline> getAll() {
 		return timelineDAO.getAll();
@@ -48,6 +52,5 @@ public class TimelineServiceImp implements TimelineService{
 	public Long count() {
 		return timelineDAO.count();
 	}
-	
-	
+
 }

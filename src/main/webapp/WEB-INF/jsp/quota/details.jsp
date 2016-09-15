@@ -30,16 +30,31 @@
 							<c:when test="${not empty timeline.cancelDate}">
 								<c:set var="state" value="danger" />
 								<c:set var="cancelDate" value="<h5><small>Cancelled: ${timeline.cancelDate}</small></h5>" />
-								<c:set var="currentState" value="This process has been cancelled." />
-								
+								<c:set var="currentState" value="This process has been cancelled." />							
 							</c:when>
-							<c:when test="${empty timeline.cancelDate}">
+							<c:otherwise>
+							
+							
+								<c:if test="${eventPercentage[status.index] == 0.0}">
+								<c:set var="state" value="default" />
+								<c:set var="currentState" value="No events have been added for this timeline..." />
+								
+							</c:if>
+							<c:if test="${eventPercentage[status.index] == 100}">
+								<c:set var="state" value="success" />
+								<c:set var="currentState" value="Completed!" />
+							</c:if>
+							<c:if test="${(eventPercentage[status.index] > 0) && (eventPercentage[status.index] < 100)}">
 								<c:set var="state" value="info" />
 								<c:set var="currentState" value="In progress..." />
-							</c:when>
+							</c:if>
+														
+							</c:otherwise>
 						</c:choose>
+						
+							
 
-			<a href="../timeline/details.html?id=${timeline.timelineId}"><div class="panel panel-${state} timeline-panels">
+			<a href="../timeline/details.html?id=${timeline.timelineId}&qid=${quota.quotaId}"><div class="panel panel-${state} timeline-panels">
 				<div class="panel-heading">
 					<h3 class="panel-title">Actual event is:
 						${actualEvents[status.index].name}</h3>

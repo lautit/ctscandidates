@@ -16,6 +16,9 @@
 		<h5 aria-label="Left Align">Job Title: ${quota.jobTitle}</h5>
 		<br>
 		<h4 aria-label="Left Align">Current Timelines:</h4>
+		<c:if test="${empty quota.timelineList}">
+		<h4><small>${message}</small></h4>
+		</c:if>
 
 		<c:set var="state" value="danger" />
 		<c:set var="cancelDate" value="" />

@@ -16,44 +16,43 @@ public class QuotaServiceImp implements QuotaService {
 
 	@SuppressWarnings("unused")
 	private static final Logger log = Logger.getLogger(QuotaServiceImp.class);
-	
+
 	@Autowired
 	private QuotaDAO quotaDAO;
-	
-	@Override 
+
+	@Override
 	public Long save(Quota quota) {
 		return quotaDAO.save(quota);
 	}
-	
-	@Override 
+
+	@Override
 	public void update(Quota quota) {
 		quotaDAO.update(quota);
 	}
-	
+
 	@Override
 	public void delete(Long id) {
 		quotaDAO.delete(id);
 	}
-	
+
 	@Override
 	public Quota searchById(Long id) {
 		return quotaDAO.searchById(id);
 	}
-	
+
 	@Override
 	public List<Quota> getAll() {
 		return quotaDAO.getAll();
 	}
-	
+
 	@Override
 	public List<Quota> getAll(int page, int rows) {
 		return quotaDAO.getAll(page, rows);
 	}
-	
+
 	@Override
 	public Long count() {
 		return quotaDAO.count();
 	}
-	
 
 }

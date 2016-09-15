@@ -9,7 +9,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class ServiceOrder {
-	
+
 	@Id
 	@GeneratedValue
 	private Long serviceOrderId;
@@ -17,7 +17,7 @@ public class ServiceOrder {
 	private String recruiter;
 	@OneToMany
 	private List<Quota> quotaList;
-	
+
 	public String getProyectManager() {
 		return proyectManager;
 	}
@@ -37,16 +37,16 @@ public class ServiceOrder {
 	public Long getServiceOrderId() {
 		return serviceOrderId;
 	}
-	
+
 	public void setServiceOrderId(Long serviceOrderId) {
 		this.serviceOrderId = serviceOrderId;
 	}
-	
+
 	public List<Quota> getQuotaList() {
 		return quotaList;
 	}
-	
+
 	public void setQuotaList(List<Quota> quotaList) {
 		this.quotaList = quotaList;
-	}	
+	}
 }

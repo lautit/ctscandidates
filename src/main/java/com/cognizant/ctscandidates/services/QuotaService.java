@@ -19,5 +19,4 @@ public interface QuotaService {
 
 	Long count();
 
-
 }

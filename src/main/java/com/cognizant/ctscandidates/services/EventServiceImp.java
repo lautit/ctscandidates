@@ -52,11 +52,11 @@ public class EventServiceImp implements EventService {
 		return eventDAO.count();
 	}
 
-	//translates an event name to percentage to show in the
-	//front end progress bar
+	// translates an event name to percentage to show in the
+	// front end progress bar
 	@Override
 	public Double convertNameToDouble(String eventName) {
-		
+
 		eventName = eventName.toLowerCase();
 
 		Double progress = 0.0;
@@ -77,7 +77,7 @@ public class EventServiceImp implements EventService {
 		case "health tests":
 			progress = 100.0;
 			break;
-		
+
 		case "hired":
 			progress = 100.0;
 			break;

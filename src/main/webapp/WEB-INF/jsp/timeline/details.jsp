@@ -6,8 +6,14 @@
 <c:import url="/templates/top.jsp" />
 
 <section class="container" id="timeline">
+	<h2>Timeline</h2>
+	<br>
 	<div class="row main-row">
-		<h2>Timeline</h2>
+		<a class="btn btn-default" id="backButton"
+			href="<c:url value="/quota/details.html?id=${ pid }"/>">
+			<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+			<span>Back to Quota</span>
+		</a>
 		<div class="col-md-12">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1" id="timeLineData">

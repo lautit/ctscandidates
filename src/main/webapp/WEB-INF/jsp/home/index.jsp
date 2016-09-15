@@ -4,29 +4,29 @@
 
 <c:import url="/templates/top.jsp" />
 
-<!-- Header -->
-<header>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<img class="img-responsive" src="<c:url value="/img/profile.png"/>" alt="">
-				<div class="intro-text">
-					<span class="name">CTS Candidate</span>
-					<span class="skills">records and tracks the outcome of your job search results</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
+<!-- <!-- Header -->
+<!-- <header> -->
+<!-- 	<div class="container"> -->
+<!-- 		<div class="row"> -->
+<!-- 			<div class="col-lg-12"> -->
+<%-- 				<img class="img-responsive" src="<c:url value="/img/profile.png"/>" alt=""> --%>
+<!-- 				<div class="intro-text"> -->
+<!-- 					<span class="name">CTS Candidate</span> -->
+<!-- 					<span class="skills">records and tracks the outcome of your job search results</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+<!-- </header> -->
 
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2>Actions</h2>
-			</div>
-		</div>
+<!-- 		<div class="row"> -->
+<!-- 			<div class="col-lg-12 text-center"> -->
+<!-- 				<h2>Actions</h2> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 		<div class="row">
 			<div class="col-sm-4 portfolio-item">
 				<a href="#portfolioModal1" class="portfolio-link"
@@ -75,5 +75,8 @@
 		</div>
 	</div>
 </section>
+
+
+<c:import url="/templates/modals.jsp" />
 
 <c:import url="/templates/bot.jsp" />

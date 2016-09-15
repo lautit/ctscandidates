@@ -27,9 +27,6 @@ public class TimelineController {
 	TimelineService timelineService;
 
 	@Autowired
-	EventService eventService;
-
-	@Autowired
 	PossibleEventsService possibleEventsService;
 
 	@RequestMapping(value = "/details", method = RequestMethod.GET)

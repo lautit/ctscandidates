@@ -8,20 +8,19 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 public class GenericDAOImp<E, K extends Serializable> implements GenericDAO<E, K> {
-	
+
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	private Class<E> entityClass;
-	 
+
 	@SuppressWarnings("unchecked")
 	public GenericDAOImp() {
-	    ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
-   this.entityClass = (Class<E>) genericSuperclass.getActualTypeArguments()[0];
+		ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
+		this.entityClass = (Class<E>) genericSuperclass.getActualTypeArguments()[0];
 	}
-	
+
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
@@ -38,14 +37,14 @@ public class GenericDAOImp<E, K extends Serializable> implements GenericDAO<E, K
 
 	@Override
 	public void update(E element) {
-		sessionFactory.getCurrentSession().update(element);		
+		sessionFactory.getCurrentSession().update(element);
 	}
 
 	@Override
 	public void delete(K id) {
 		E element = searchById(id);
 		sessionFactory.getCurrentSession().delete(element);
-		
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -71,8 +70,8 @@ public class GenericDAOImp<E, K extends Serializable> implements GenericDAO<E, K
 
 	@Override
 	public Long count() {
-		return (Long) sessionFactory.getCurrentSession().createQuery("select count(*) from " + entityClass.getName() + " obj").uniqueResult();
+		return (Long) sessionFactory.getCurrentSession()
+				.createQuery("select count(*) from " + entityClass.getName() + " obj").uniqueResult();
 	}
-		
 
 }

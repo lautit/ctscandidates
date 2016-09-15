@@ -4,7 +4,7 @@
 
 <c:import url="/templates/top.jsp" />
 
-<div style="padding-top:20px">
+<div class="container">
 <div class="panel panel-default col-sm-8 col-md-8 col-md-offset-2 " >
 	<div class="panel-heading">
 		<h3 class="panel-title">Service Orders</h3>
@@ -30,7 +30,6 @@
 	</div>
 </div>
 </div>
-
 
 
 

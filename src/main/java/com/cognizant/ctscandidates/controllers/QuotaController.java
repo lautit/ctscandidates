@@ -6,15 +6,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cognizant.ctscandidates.bo.Event;
 import com.cognizant.ctscandidates.bo.Quota;
+import com.cognizant.ctscandidates.bo.ServiceOrder;
 import com.cognizant.ctscandidates.bo.Timeline;
 import com.cognizant.ctscandidates.services.EventService;
 import com.cognizant.ctscandidates.services.QuotaService;
+import com.cognizant.ctscandidates.services.ServiceOrderService;
 import com.cognizant.ctscandidates.services.TimelineService;
 
 @RequestMapping("/quota")
@@ -27,7 +31,8 @@ public class QuotaController {
 	TimelineService timelineService;//testing purposes
 	@Autowired
 	EventService eventService;//testing purposes
-	
+	@Autowired 
+	ServiceOrderService serviceOrderService;
 	
 	@RequestMapping(value = "/details", method = RequestMethod.GET)
 	public String details(@RequestParam Long id, Model model){
@@ -78,5 +83,16 @@ public class QuotaController {
 
 		return null;
 	}
-
+	
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public String save(@RequestParam Long id,@RequestBody Quota quota, Model model) {
+		
+		ServiceOrder serviceOrder = serviceOrderService.searchById(id);
+		
+			quotaService.save(quota);
+			serviceOrder.getQuotaList().add(quota);	
+		
+		serviceOrderService.update(serviceOrder);
+		return "redirect:/serviceorder/details.html?id="+id;
+	}
 }

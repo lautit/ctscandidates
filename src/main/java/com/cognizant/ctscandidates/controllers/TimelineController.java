@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cognizant.ctscandidates.bo.Event;
 import com.cognizant.ctscandidates.bo.PossibleEvents;
 import com.cognizant.ctscandidates.bo.Timeline;
-import com.cognizant.ctscandidates.services.EventService;
 import com.cognizant.ctscandidates.services.PossibleEventsService;
 import com.cognizant.ctscandidates.services.TimelineService;
 
@@ -30,12 +29,12 @@ public class TimelineController {
 	PossibleEventsService possibleEventsService;
 
 	@RequestMapping(value = "/details", method = RequestMethod.GET)
-	public String details(@RequestParam Long id, Model model) {
+	public String details(@RequestParam Long id, @RequestParam Long pid, Model model) {
 		Timeline timeline = timelineService.searchById(id);
-		List<Event> events = timeline.getEvents();
 		List<PossibleEvents> possibleEvents = possibleEventsService.getAll();
 		
-		Map<String, Event> eventsWithoutStates = events.stream()
+		Map<String, Event> eventsWithoutStates = timeline.getEvents()
+				.stream()
 				.collect(Collectors.toMap(
 						evt -> evt.getName(),
 						evt -> evt));
@@ -48,7 +47,9 @@ public class TimelineController {
 							throw new IllegalStateException(String.format("Duplicate key %s", u));
 						},
 						LinkedHashMap::new));
-
+		
+		if(pid != null)
+			model.addAttribute("pid", pid);
 		model.addAttribute("timeline", timeline);
 		model.addAttribute("events", possiblesWithStates);
 		model.addAttribute("possibleEvents", possibleEvents);

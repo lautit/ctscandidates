@@ -4,22 +4,28 @@ $(document).ready(function () {
 	var PROGRESS_PERCENTAGE = Object.freeze({
 		progress: {
 			'newCandidate': {
-				percentage: '0%'
+				percentage: '0%',
+				color: 'progress-bar progress-bar-default'
 			},
 			'firstCall': {
-				percentage: '20%'
+				percentage: '20%',
+				color: 'progress-bar progress-bar-info'
 			},
 			'firstInterview': {
-				percentage: '40%'
+				percentage: '40%',
+				color: 'progress-bar progress-bar-info'
 			},
 			'techInterview': {
-				percentage: '60%'
+				percentage: '60%',
+				color: 'progress-bar progress-bar-info'
 			},
 			'healthTests': {
-				percentage: '80%'
+				percentage: '80%',
+				color: 'progress-bar progress-bar-info'
 			},
 			'hired': {
-				percentage: '100%'
+				percentage: '100%',
+				color: 'progress-bar progress-bar-success'
 			}
 		}
 	});
@@ -49,8 +55,8 @@ $(document).ready(function () {
 		console.log(checkbox);
 	}
 
-	function updateProgress(value) {
-		$('#statusBar').css('width', value);
+	function updateProgress(value, color) {
+		$('#statusBar').css('width', value).attr('class', color);
 	}
 
 	$(':checkbox').change(function () {
@@ -70,7 +76,8 @@ $(document).ready(function () {
 		}
 
 		if (thisCheckbox.is(':checked')) {
-			updateProgress(PROGRESS_PERCENTAGE.progress[thisCheckbox.prop('id')].percentage);
+			var progressInfo = PROGRESS_PERCENTAGE.progress[thisCheckbox.prop('id')];
+			updateProgress(progressInfo.percentage, progressInfo.color);
 		}
 	});
 

@@ -59,7 +59,7 @@ public class EventServiceImp implements EventService {
 		
 		eventName = eventName.toLowerCase();
 
-		Double progress = null;
+		Double progress = 0.0;
 
 		switch (eventName) {
 		case "new candidate":

@@ -55,6 +55,7 @@ public class QuotaController {
 				}else{
 					//we create an event with a custom name that shows there are no events
 					lastEvent.setName("No events for this timeline");
+					eventPercentage.add(eventService.convertNameToDouble(lastEvent.getName()));
 					actualEvents.add(lastEvent);
 				}			
 			}			

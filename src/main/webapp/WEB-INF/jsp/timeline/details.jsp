@@ -68,5 +68,5 @@
 		</div>
 	</div>
 </section>
-<script src="<c:url value=" /js/timeline.js "/>"></script>
+<script src="<c:url value="/js/timeline.js"/>"></script>
 <c:import url="/templates/bot.jsp" />

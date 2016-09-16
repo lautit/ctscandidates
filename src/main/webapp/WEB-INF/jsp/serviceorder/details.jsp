@@ -42,7 +42,7 @@
 	$(function() {
 		$('#quotaForm').validate();	
 		$('#saveChangesButton').click(function() {
-			$('#quotaForm').validate();	
+			
 			var quota = getData();
 			// 		 	addToList(quota);
 						appendData(quota);
@@ -76,9 +76,12 @@
 
 	function saveData(q) {
 
+		
+
+		
 		$.ajax({
 			contentType : 'application/json',
-			url : "../quota/save.html?id=${serviceOrder.serviceOrderId}",
+			url : "../quota/save.html?id=" + ${serviceOrder.serviceOrderId},
 			type : 'POST',
 			dataType : 'json',
 			data : JSON.stringify(q),
@@ -90,13 +93,7 @@
 			}
 		});
 
-		// 		$.ajax({
-		// 			type : "POST",
-		// 			contentType : 'application/json; charset=utf-8',
-		// 			dataType : 'json',
-		// 			url : "../quota/save.html?id=${serviceOrder.serviceOrderId}",
-		// 			data : JSON.stringify(q)
-		// 		});
+
 	}
 </script>
 

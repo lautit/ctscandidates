@@ -10,6 +10,7 @@ html {
 body {
 	position: relative;
 	min-height: 100%;
+	top-margin: 100px;
 }
 
 footer {

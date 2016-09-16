@@ -1,9 +1,16 @@
 package com.cognizant.ctscandidates.controllers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -84,15 +91,42 @@ public class QuotaController {
 		return null;
 	}
 	
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@RequestParam Long id,@RequestBody Quota quota, Model model) {
+	@RequestMapping(value = "/save", method = RequestMethod.POST, consumes="application/json")
+	public @ResponseBody String save(@RequestBody String q) {
 		
-		ServiceOrder serviceOrder = serviceOrderService.searchById(id);
-		
+		System.out.println(q);
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			
+			Quota quota = new Quota();
+			
+			quota =  mapper.readValue(q, Quota.class);
+			System.out.println(quota.getJobGrade());
+			System.out.println(quota.getJobTitle());
+			System.out.println(quota.getJobCode());
+			
+			
+			ServiceOrder serviceOrder = serviceOrderService.searchById(1L);
+			
 			quotaService.save(quota);
 			serviceOrder.getQuotaList().add(quota);	
 		
 		serviceOrderService.update(serviceOrder);
-		return "redirect:/serviceorder/details.html?id="+id;
+			
+			
+		} catch (JsonParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return "redirect:/serviceorder/details.html?id=" + 1 ;
 	}
 }

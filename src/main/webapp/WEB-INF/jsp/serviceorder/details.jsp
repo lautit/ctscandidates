@@ -7,7 +7,6 @@
 <c:import url="/templates/top.jsp" />
 
 <script src="<c:url value="/js/jquery.validate.js"/>"></script>
-
 <script src="<c:url value="/js/handlebars-v4.0.5.js"/>"></script>
 
 <script id="template" type="text/x-handlebars-template">
@@ -41,15 +40,17 @@
 <script>
 	// 	var quotaList=[];
 	$(function() {
-		$('#quotaForm').validate();
+		$('#quotaForm').validate();	
 		$('#saveChangesButton').click(function() {
+			$('#quotaForm').validate();	
 			var quota = getData();
 			// 		 	addToList(quota);
-// 			appendData(quota);
+						appendData(quota);
 			saveData(quota);
 		});
 	});
-	
+
+
 	function getData() {
 		var jobCodeValue = $('#jobCodeId').val();
 		var jobTitleValue = $('#jobTitleId').val();
@@ -69,40 +70,34 @@
 		$('#handlebarCardId').append(template(q));
 	}
 
-// 	function addToList(q) {
-// 		quotaList.push(q);
-// 	}
+	// 	function addToList(q) {
+	// 		quotaList.push(q);
+	// 	}
 
 	function saveData(q) {
-	
+
 		$.ajax({
-	        contentType: 'application/json',
-	        url: "../quota/save.html?id=${serviceOrder.serviceOrderId}",
-	        type: 'POST',
-	        dataType: 'json',
-	        data: JSON.stringify(q),
-	        success: function(response) {
-	            console.log("success");
-	        },
-	        error: function() {
-	            console.log("error");
-	        }
-	    });
-		
-		
-// 		$.ajax({
-// 			type : "POST",
-// 			contentType : 'application/json; charset=utf-8',
-// 			dataType : 'json',
-// 			url : "../quota/save.html?id=${serviceOrder.serviceOrderId}",
-// 			data : JSON.stringify(q)
-// 		});
+			contentType : 'application/json',
+			url : "../quota/save.html?id=${serviceOrder.serviceOrderId}",
+			type : 'POST',
+			dataType : 'json',
+			data : JSON.stringify(q),
+			success : function(response) {
+				console.log("success");
+			},
+			error : function() {
+				console.log("error");
+			}
+		});
+
+		// 		$.ajax({
+		// 			type : "POST",
+		// 			contentType : 'application/json; charset=utf-8',
+		// 			dataType : 'json',
+		// 			url : "../quota/save.html?id=${serviceOrder.serviceOrderId}",
+		// 			data : JSON.stringify(q)
+		// 		});
 	}
-	
-	
-	
-
-
 </script>
 
 <div class="container">
@@ -117,6 +112,7 @@
 
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+	
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -128,27 +124,28 @@
 					<h4 class="modal-title" id="myModalLabel">New quota</h4>
 				</div>
 				<div class="modal-body">
-					<div class="form-group">
-						<label for="jobCodeId">Job Code</label> <input id="jobCodeId"
-							type="text" class="form-control required" />
-					</div>
+					<form id="quotaForm">
+						<div class="form-group">
+							<label for="jobCodeId">Job Code</label> <input id="jobCodeId"
+								type="text" class="form-control required" />
+						</div>
 
-					<div class="form-group">
-						<label for="jobTitleId">Job Title</label> <input id="jobTitleId"
-							type="text" class="form-control required" />
-					</div>
+						<div class="form-group">
+							<label for="jobTitleId">Job Title</label> <input id="jobTitleId"
+								type="text" class="form-control required" />
+						</div>
 
-					<div class="form-group">
-						<label for="jobGradeId">Job Grade</label> <input id="jobGradeId"
-							type="text" class="form-control required" />
-					</div>
-				</div>
+						<div class="form-group">
+							<label for="jobGradeId">Job Grade</label> <input id="jobGradeId"
+								type="text" class="form-control required" />
+						</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button id="saveChangesButton" type="button"
-						class="btn btn-success" data-dismiss="modal">Save changes</button>
+					<input id="saveChangesButton" type="submit" 
+						class="btn btn-success" data-dismiss="modal" value="Save"></input>
 				</div>
-
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

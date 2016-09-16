@@ -8,6 +8,12 @@
 
 <script src="<c:url value="/js/jquery.validate.js"/>"></script>
 
+<script>
+$(function() {
+	$('#serviceOrderForm').validate();
+});
+</script>
+
 
 <div class="container">
 <div class='page-header'>

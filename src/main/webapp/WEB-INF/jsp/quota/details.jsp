@@ -54,7 +54,7 @@
 						
 							
 
-			<a href="../timeline/details.html?id=${timeline.timelineId}&qid=${quota.quotaId}"><div class="panel panel-${state} timeline-panels">
+			<a href="../timeline/details.html?id=${timeline.timelineId}&pid=${quota.quotaId}"><div class="panel panel-${state} timeline-panels">
 				<div class="panel-heading">
 					<h3 class="panel-title">Actual event is:
 						${actualEvents[status.index].name}</h3>

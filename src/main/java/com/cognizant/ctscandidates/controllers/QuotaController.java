@@ -92,12 +92,13 @@ public class QuotaController {
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST, consumes="application/json")
-	public @ResponseBody String save(@RequestBody String q) {
+	public @ResponseBody String save(@RequestParam Long soId, @RequestBody String q) {
 		
-		System.out.println(q);
+		
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			
+			System.out.println(soId);
+			System.out.println(q);
 			Quota quota = new Quota();
 			
 			quota =  mapper.readValue(q, Quota.class);
@@ -106,7 +107,7 @@ public class QuotaController {
 			System.out.println(quota.getJobCode());
 			
 			
-			ServiceOrder serviceOrder = serviceOrderService.searchById(1L);
+			ServiceOrder serviceOrder = serviceOrderService.searchById(soId);
 			
 			quotaService.save(quota);
 			serviceOrder.getQuotaList().add(quota);	
@@ -127,6 +128,6 @@ public class QuotaController {
 		
 		
 		
-		return "redirect:/serviceorder/details.html?id=" + 1 ;
+		return "redirect:/serviceorder/details.html?id=" + soId ;
 	}
 }

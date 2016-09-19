@@ -77,11 +77,12 @@
 	function saveData(q) {
 
 		
-
+		var soId = ${serviceOrder.serviceOrderId};
 		
 		$.ajax({
+			
 			contentType : 'application/json',
-			url : "../quota/save.html?id=" + ${serviceOrder.serviceOrderId},
+			url : "../quota/save.html?id=" + soId,
 			type : 'POST',
 			dataType : 'json',
 			data : JSON.stringify(q),
